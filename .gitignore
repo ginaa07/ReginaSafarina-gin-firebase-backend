@@ -1,0 +1,9 @@
+// .gitignore
+
+# .gitignore
+.env
+backendgolang-firebase-adminsdk-fbsvc-6ce0e2b799.json
+*.exe
+*.test
+/tmp
+/vendor
