@@ -19,3 +19,11 @@ func (r *ProductRepository) FindAll(page, limit int, category string) ([]models.
 	if category != "" {
 		query = query.Where("category = ?", category)
 	}
+
+	// Hitung total untuk pagination
+	query.Count(&total)
+	// Ambil data dengan offset & limit
+	offset := (page - 1) * limit
+	result := query.Offset(offset).Limit(limit).Find(&products)
+	return products, total, result.Error
+}
