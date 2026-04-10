@@ -32,3 +32,19 @@ func (s *AuthService) VerifyFirebaseToken(firebaseToken string) (string, *models
 	if !emailVerified {
 		return "", nil, errors.New("EMAIL_NOT_VERIFIED")
 	}
+
+	uid := token.UID
+	email, _ := token.Claims["email"].(string)
+	name, _ := token.Claims["name"].(string)
+
+	user, err := s.userRepo.FindByFirebaseUID(uid)
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		now := time.Now().Unix()
+		user = &models.User{
+			FirebaseUID:   uid,
+			Email:         email,
+			Name:          name,
+			Role: 		   "user",
+			EmailVerified: true,
+			LastLoginAt:   &now,
+		}
