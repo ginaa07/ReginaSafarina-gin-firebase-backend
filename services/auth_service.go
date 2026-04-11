@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/golang-jwt/jwt/v5"
 	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/config"
 	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/models"
 	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/repositories"
+	"github.com/golang-jwt/jwt/v5"
 	"gorm.io/gorm"
 )
 
@@ -22,7 +22,7 @@ func NewAuthService() *AuthService {
 	return &AuthService{userRepo: repositories.NewUserRepository()}
 }
 
-func (s *AuthService) VerifyFirebaseToken(firebaseToken string) (string, *models.User, error){
+func (s *AuthService) VerifyFirebaseToken(firebaseToken string) (string, *models.User, error) {
 	token, err := config.FirebaseAuth.VerifyIDToken(context.Background(), firebaseToken)
 	if err != nil {
 		return "", nil, errors.New("firebase token tidak valid atau kadaluarsa")
@@ -38,24 +38,27 @@ func (s *AuthService) VerifyFirebaseToken(firebaseToken string) (string, *models
 	name, _ := token.Claims["name"].(string)
 
 	user, err := s.userRepo.FindByFirebaseUID(uid)
+	
 	if errors.Is(err, gorm.ErrRecordNotFound) {
+		// KONDISI: User belum ada, buat baru
 		now := time.Now().Unix()
 		user = &models.User{
 			FirebaseUID:   uid,
 			Email:         email,
 			Name:          name,
-			Role: 		   "user",
+			Role:          "user",
 			EmailVerified: true,
 			LastLoginAt:   &now,
 		}
 
-		}
 		if err := s.userRepo.Create(user); err != nil {
 			return "", nil, errors.New("gagal bikin user baru")
 		}
 	} else if err != nil {
+		// KONDISI: Error database lainnya
 		return "", nil, errors.New("gagal mengambil data user")
 	} else {
+		// KONDISI: User ditemukan, update data login terakhir
 		now := time.Now().Unix()
 		user.LastLoginAt = &now
 		user.EmailVerified = true
@@ -71,22 +74,22 @@ func (s *AuthService) VerifyFirebaseToken(firebaseToken string) (string, *models
 }
 
 func (s *AuthService) generateJWT(user *models.User) (string, error) {
-	expireHours, _ := strconv.Atoi(os.Getenv("JWT_EXPIRE_HOURS"))
-	if expireHours == 0 {
+	expireHoursStr := os.Getenv("JWT_EXPIRE_HOURS")
+	expireHours, err := strconv.Atoi(expireHoursStr)
+	if err != nil || expireHours == 0 {
 		expireHours = 24
 	}
 
 	claims := jwt.MapClaims{
-		"sub": user.ID,
-		"firebase_uid": user.FirebaseUID,
-		"email": user.Email,
-		"name": user.Name,
-		"role": user.Role,
+		"sub":            user.ID,
+		"firebase_uid":   user.FirebaseUID,
+		"email":          user.Email,
+		"name":           user.Name,
+		"role":           user.Role,
 		"email_verified": user.EmailVerified,
-		"iat": time.Now().Unix(),
-		"exp": time.Now().Add(time.Hour *time.Duration(expireHours)).Unix(),
+		"iat":            time.Now().Unix(),
+		"exp":            time.Now().Add(time.Hour * time.Duration(expireHours)).Unix(),
 	}
-
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	return token.SignedString([]byte(os.Getenv("JWT_SECRET")))
