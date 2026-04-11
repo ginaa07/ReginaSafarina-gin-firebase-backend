@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"github.com/ReginaSafarina/gin-firebase-backend/models"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )
-// DB adalah instance GORM global yang dipakai di seluruh aplikasi
+// DB adalah instance GORM global yang dipakai di seluruh aplikasii
 var DB *gorm.DB
 
 func InitDatabase() {
