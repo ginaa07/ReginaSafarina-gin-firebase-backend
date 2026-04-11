@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/ReginaSafarina/gin-firebase-backend/config"
-	"github.com/ReginaSafarina/gin-firebase-backend/routes"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/config"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/routes"
 )
 
 func main(){

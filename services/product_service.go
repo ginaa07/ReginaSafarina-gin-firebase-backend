@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/ReginaSafarina/gin-firebase-backend/models"
-	"github.com/ReginaSafarina/gin-firebase-backend/repositories"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/models"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/repositories"
 )
 
 type ProductService struct {

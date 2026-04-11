@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/ReginaSafarina/gin-firebase-backend/models"
-	"github.com/ReginaSafarina/gin-firebase-backend/services"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/models"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/services"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"github.com/ReginaSafarina/gin-firebase-backend/config"
-	"github.com/ReginaSafarina/gin-firebase-backend/models"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/config"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/models"
 )
 
 type ProductRepository struct{}

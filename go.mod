@@ -1,4 +1,4 @@
-module ginaa07/ReginaSafarina-gin-firebase-backend
+module github.com/ginaa07/ReginaSafarina-gin-firebase-backend
 
 go 1.26.1
 
