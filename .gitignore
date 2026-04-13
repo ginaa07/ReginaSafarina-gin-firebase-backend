@@ -1,9 +1,13 @@
-// .gitignore
-
-# .gitignore
+# Environment variables (Berisi API Key/Secrets)
 .env
-backendgolang-firebase-adminsdk-fbsvc-6ce0e2b799.json
+
+# Firebase Service Account (File yang tadi terdeteksi GitHub)
+firebase-service-account.json
+
+# Binaries & Executables
 *.exe
 *.test
+
+# Directories
 /tmp
 /vendor
