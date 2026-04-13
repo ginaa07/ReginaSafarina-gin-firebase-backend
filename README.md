@@ -58,5 +58,34 @@ GET
 <img width="1911" height="884" alt="image" src="https://github.com/user-attachments/assets/3f3a0148-5989-458d-8a22-a2c262011475" />
 
 
+---
+
+### Get Product By id 
+- Endpoint
+```bash
+GET
+
+{{BACKEND_BASE_URL}}/v1/products/2
+```
+
+### Example
+<img width="1914" height="921" alt="image" src="https://github.com/user-attachments/assets/a52e91a4-db05-4a8d-b7fe-b1a3036d92d2" />
+
+---
+
+# Seeder
+
+- Command Running Seed
+```bash
+go run seeds/seed.go
+```
+
+### Setelah di run, akan tampil seperti di gambar berikut
+<img width="1889" height="869" alt="image" src="https://github.com/user-attachments/assets/499e529c-e106-4b31-a407-79de149fd190" />
+
+
+
+
+
 
 
