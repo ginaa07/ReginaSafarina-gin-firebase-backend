@@ -4,5 +4,5 @@
 
 * Endpoint
 
-```http
+```json
 GET {{BACKEND_BASE_URL}}/v1/health
