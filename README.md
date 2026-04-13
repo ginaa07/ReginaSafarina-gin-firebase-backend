@@ -44,7 +44,18 @@ POST
 
 
 
+---
 
+### Get All Product 
+- Endpoint
+```bash
+GET
+
+{{BACKEND_BASE_URL}}/v1/products
+```
+
+### Example
+<img width="1911" height="884" alt="image" src="https://github.com/user-attachments/assets/3f3a0148-5989-458d-8a22-a2c262011475" />
 
 
 
