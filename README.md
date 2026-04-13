@@ -84,8 +84,81 @@ go run seeds/seed.go
 <img width="1889" height="869" alt="image" src="https://github.com/user-attachments/assets/499e529c-e106-4b31-a407-79de149fd190" />
 
 
+---
 
+# Flow (Sequence Diagram)
 
+### Create User
+<img width="6250" height="3165" alt="User Creation Request Flow-2026-04-11-085325" src="https://github.com/user-attachments/assets/755e8604-7da3-4ade-b323-fade9615863e" />
+
+### Code
+```bash
+sequenceDiagram
+participant Client
+participant Middleware
+participant Handler
+participant Service
+participant Repository
+participant DB
+Client->>Middleware: HTTP Request
+Middleware->>Handler: forward request
+Handler->>Service: CreateUser()
+Service->>Repository: SaveUser()
+Repository->>DB: INSERT USER
+DB-->>Repository: OK
+Repository-->>Service: user saved
+Service-->>Handler: user response
+Handler-->>Client: JSON Response
+```
+
+# Get All Product
+<img width="2908" height="1206" alt="mermaid-diagram-2026-04-13-232415" src="https://github.com/user-attachments/assets/5d0e3889-cafa-403a-9d34-de2444ef1f34" />
+
+### Code
+
+```bash
+sequenceDiagram
+participant Client
+participant Middleware
+participant Handler
+participant Service
+participant Repository
+participant DB
+Client->>Middleware: HTTP Request (Get v1/products)
+Middleware->>Handler: forward request
+Handler->>Service: GetAll
+Service->>Repository: FindAll
+Repository->>DB: SELECT * FROM products
+DB-->>Repository: product rows
+Repository-->>Service: products list
+Service-->>Handler: products response
+Handler-->>Client: JSON Response
+```
+
+# Get Product by Id
+<img width="7845" height="3165" alt="Product Retrieval Flow-2026-04-13-163347" src="https://github.com/user-attachments/assets/335ca494-570b-43fa-854a-a26caa263de7" />
+
+### Code
+
+```bash
+sequenceDiagram
+participant Client
+participant Middleware
+participant Handler
+participant Service
+participant Repository
+participant DB
+
+Client->>Middleware: HTTP Request (Get v1/products/id)
+Middleware->>Handler: forward request
+Handler->>Service: GetById
+Service->>Repository: FindById
+Repository->>DB: SELECT * FROM products where id=?
+DB-->>Repository: product rows
+Repository-->>Service: products list
+Service-->>Handler: products response
+Handler-->>Client: JSON Response
+```
 
 
 
