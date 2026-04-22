@@ -14,7 +14,7 @@ type Product struct {
 	IsActive    bool    `gorm:"default:true;index" json:"is_active"`
 }
 
-// Request/Response DTOs (Data Transfer Objectss)
+// Request/Response DTOs (Data Transfer Objectsss)
 // Dipakai untuk validasi input dari HTTP request
 type CreateProductRequest struct {
 	Name        string  `json:"name" binding:"required,min=2,max=200"`
