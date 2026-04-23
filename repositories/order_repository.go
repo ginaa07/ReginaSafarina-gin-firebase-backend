@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"github.com/iketutg/mycatalog-be/config"
-	"github.com/iketutg/mycatalog-be/models"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/config"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/models"
 )
 
 type OrderRepository struct{}
