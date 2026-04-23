@@ -18,7 +18,7 @@ func main(){
 			Category:"Heels Wanita", 
 			Stock:50,
 			Description:"Steve Madden LOIRE Women's Shoes Heels- Rose Gold - Rose Gold",
-			ImageURL:"https://picsum.photos/600/400",
+			ImageURL:"assets/images/steve-madden.png",
 		},
 		{
 			Name:"HELIVA", 
@@ -26,7 +26,7 @@ func main(){
 			Category:"Heels Wanita", 
 			Stock:50,
 			Description:"Heliva Sherly Women High Heels Glitter Jewel Accesories",
-			ImageURL:"https://picsum.photos/600/400",
+			ImageURL:"assets/images/heliva.png",
 		},
 		{
 			Name:"Yongki Komaladi", 
@@ -34,7 +34,7 @@ func main(){
 			Category:"Heels Wanita", 
 			Stock:50,
 			Description:"YONGKI KOMALADI ELIZA HEELS WANITA SGL-272158-A20 GOLD",
-			ImageURL:"https://picsum.photos/600/400",
+			ImageURL:"assets/images/yongki.png",
 		},
 		{
 			Name:"Trendyol", 
@@ -42,7 +42,7 @@ func main(){
 			Category:"Heels Wanita", 
 			Stock:50,
 			Description:"Baby Blue Ankle Strap Women's Thin Heeled Shoes Takss25To00097",
-			ImageURL:"https://picsum.photos/600/400",
+			ImageURL:"assets/images/trendyol.png",
 		},
 		{
 			Name:"Cavasso", 
@@ -50,7 +50,7 @@ func main(){
 			Category:"Heels Wanita", 
 			Stock:50,
 			Description:"Sintesa Suede - Black",
-			ImageURL:"https://ibb.co.com/r258zWd4",
+			ImageURL:"assets/images/cavasso.png",
 		},
 
 	}
