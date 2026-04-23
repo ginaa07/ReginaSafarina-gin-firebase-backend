@@ -2,8 +2,8 @@ package services
 
 import (
 	"errors"
-	"github.com/iketutg/mycatalog-be/models"
-	"github.com/iketutg/mycatalog-be/repositories"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/models"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/repositories"
 )
 
 type OrderService struct {
