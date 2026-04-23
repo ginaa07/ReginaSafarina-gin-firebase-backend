@@ -50,7 +50,7 @@ func main(){
 			Category:"Heels Wanita", 
 			Stock:50,
 			Description:"Sintesa Suede - Black",
-			ImageURL:"https://picsum.photos/600/400",
+			ImageURL:"https://ibb.co.com/r258zWd4",
 		},
 
 	}
