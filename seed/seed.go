@@ -13,7 +13,7 @@ func main(){
 	config.InitDatabase()
 	products := []models.Product{
 		{
-			Name:"Steve Madden", 
+			Name:"STEVE MADDEN LOIRE", 
 			Price:25000, 
 			Category:"Heels Wanita", 
 			Stock:50,
@@ -21,11 +21,11 @@ func main(){
 			ImageURL:"https://picsum.photos/600/400",
 		},
 		{
-			Name:"Es Jeruk", 
+			Name:"HELIVA", 
 			Price:5000, 
-			Category:"Minuman", 
+			Category:"Heels Wanita", 
 			Stock:50,
-			Description:"Minuman Sachetan",
+			Description:"Heliva Sherly Women High Heels Glitter Jewel Accesories",
 			ImageURL:"https://picsum.photos/600/400",
 		},
 		{
