@@ -13,11 +13,11 @@ func main(){
 	config.InitDatabase()
 	products := []models.Product{
 		{
-			Name:"Nasi Goreng Spesial", 
+			Name:"Steve Madden", 
 			Price:25000, 
-			Category:"Makanan", 
+			Category:"Heels Wanita", 
 			Stock:50,
-			Description:"Nasi goreng dengan telur dan ayam",
+			Description:"Steve Madden LOIRE Women's Shoes Heels- Rose Gold - Rose Gold",
 			ImageURL:"https://picsum.photos/600/400",
 		},
 		{
