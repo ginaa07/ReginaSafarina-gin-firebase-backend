@@ -29,11 +29,11 @@ func main(){
 			ImageURL:"https://picsum.photos/600/400",
 		},
 		{
-			Name:"Mie Gacoan", 
+			Name:"Yongki Komaladi", 
 			Price:20000, 
-			Category:"Makanan", 
+			Category:"Heels Wanita", 
 			Stock:50,
-			Description:"Mie Pedas No 1 di Indonesia",
+			Description:"YONGKI KOMALADI ELIZA HEELS WANITA SGL-272158-A20 GOLD",
 			ImageURL:"https://picsum.photos/600/400",
 		},
 		{
