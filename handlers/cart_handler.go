@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/iketutg/mycatalog-be/models"
-	"github.com/iketutg/mycatalog-be/services"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/models"
+	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/services"
 	"net/http"
 	"strconv"
 )
