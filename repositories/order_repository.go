@@ -40,7 +40,6 @@ func (r *OrderRepository) GetByID(id, userID uint) (*models.Order, error) {
 	return &order, nil
 }
 
-// GetAll untuk admin — semua order
 func (r *OrderRepository) GetAll(page, limit int) ([]models.Order, int64, error) {
 	var orders []models.Order
 	var total int64

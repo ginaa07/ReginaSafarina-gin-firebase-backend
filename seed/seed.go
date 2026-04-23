@@ -46,7 +46,7 @@ func main(){
 		},
 		{
 			Name:"Cavasso", 
-			Price:244.000, 
+			Price:244000, 
 			Category:"Heels Wanita", 
 			Stock:50,
 			Description:"Sintesa Suede - Black",
