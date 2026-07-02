@@ -4,25 +4,25 @@ import (
 	"log"
 	"os"
 
-	"github.com/joho/godotenv"
 	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/config"
 	"github.com/ginaa07/ReginaSafarina-gin-firebase-backend/routes"
+	"github.com/joho/godotenv"
 )
 
-func main(){
+func main() {
 	if err := godotenv.Load(); err != nil {
 		log.Println("File .env tidak ditemukan, menggunakan environment variable sistem")
 	}
 
 	config.InitFirebase()
-	
+
 	config.InitDatabase()
 	// Setup router
 	router := routes.SetupRouter()
 	// Jalankan server
 	port := os.Getenv("APP_PORT")
 	if port == "" {
-		port = "8080"
+		port = "8081"
 	}
 
 	log.Printf("Server berjalan di http://localhost:%s", port)
